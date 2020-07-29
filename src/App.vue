@@ -37,4 +37,22 @@ export default {
 </script>
 
 <style>
+body {
+  background: #5f021f;
+  color: #f4fffd;
+  font-family: "Crete Round", serif;
+}
+
+/* Destyle */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.main-container {
+  display: flex;
+}
+.flag-sm {
+  width: 3em;
+}
 </style>
