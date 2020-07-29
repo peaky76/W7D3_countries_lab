@@ -1,30 +1,33 @@
 <template>
-  <fieldset v-if="country" :style="flagStyle">
-    <legend>{{country.name}}</legend>
-    <div class="details">
-      <ul>
-        <li>
-          <span class="key">Population:</span>
-          <span class="value">{{country.population | numberFormatter}}</span>
-        </li>
-        <li>
-          <span class="key">Capital:</span>
-          <span class="value">{{country.capital}}</span>
-        </li>
-        <li>
-          <span class="key">Languages:</span>
-          <span
-            class="value lang"
-            v-for="(lang, index) in country.languages"
-            :key="index"
-          >{{lang.name}}</span>
-        </li>
-      </ul>
-    </div>
-    <div class="flag">
-      <img class="flag-lg" :src="country.flag" />
-    </div>
-  </fieldset>
+  <div v-if="country">
+    <hr />
+    <fieldset>
+      <legend>{{country.name}}</legend>
+      <div class="details">
+        <ul>
+          <li>
+            <span class="key">Population:</span>
+            <span class="value">{{country.population | numberFormatter}}</span>
+          </li>
+          <li>
+            <span class="key">Capital:</span>
+            <span class="value">{{country.capital}}</span>
+          </li>
+          <li>
+            <span class="key">Languages:</span>
+            <span
+              class="value lang"
+              v-for="(lang, index) in country.languages"
+              :key="index"
+            >{{lang.name}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="flag">
+        <img class="flag-lg" :src="country.flag" />
+      </div>
+    </fieldset>
+  </div>
 </template>
 
 <script>
@@ -45,6 +48,7 @@ fieldset {
   width: 600px;
   height: 300px;
   background-color: #716a5c;
+  margin-top: 2em;
   padding: 2em;
 }
 legend {
@@ -54,8 +58,8 @@ legend {
   float: left;
 }
 .flag {
-  border: 3px groove;
   float: right;
+  border: 3px groove;
   width: 15em;
   height: 9em;
 }
@@ -64,6 +68,7 @@ legend {
   width: 100%;
 }
 .key {
+  display: inline-block;
   width: 8em;
 }
 .lang::after {
