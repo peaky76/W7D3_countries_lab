@@ -1,6 +1,5 @@
 <template>
   <div v-if="country">
-    <hr />
     <fieldset>
       <legend>{{country.name}}</legend>
       <div class="details">

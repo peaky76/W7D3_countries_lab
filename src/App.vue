@@ -19,7 +19,8 @@ export default {
   data() {
     return {
       countries: [],
-      searchTerm: null,
+      selectedCountry: null,
+      searchTerm: "",
     };
   },
   computed: {
